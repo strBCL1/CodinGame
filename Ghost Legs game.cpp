@@ -64,8 +64,8 @@ int main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
+    freopen("input.txt", "r", stdin); //Inputting data from file "input.txt". Disable by adding // before a line if needed.
+    freopen("output.txt", "w", stdout); //Inputting data from file "output.txt". Disable by adding // before a line if needed.
     
     //Declare width and height; input width and height; clean the input buffer (stream)
     int w, h; cin >> w >> h; cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
