@@ -31,7 +31,7 @@ int calculatePath (vector<string> v, vector<vector<bool>> visited, int curX, int
         }
         
     }
-    //"Control reaches end of non-void function" warning without 'return' statement
+    //Control reaches end of non-void function" warning without 'return' statement
     return curLen;    
 }
 
