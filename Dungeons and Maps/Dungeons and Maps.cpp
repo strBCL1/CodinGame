@@ -1,9 +1,6 @@
 #include <iostream>
 #include <vector>
 using namespace std;
-#define pb push_back
-#define mp make_pair
-#define ll long long
 
 //Function to calculate shortest path on current map
 int calculatePath (vector<string> v, vector<vector<bool>> visited, int curX, int curY) {
