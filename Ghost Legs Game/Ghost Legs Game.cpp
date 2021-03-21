@@ -1,10 +1,9 @@
-#include <bits/stdc++.h> //Library to store primary needed functions
+//Link to the puzzle: https://www.codingame.com/training/easy/ghost-legs
+#include <iostream>
+#include <vector>
+#include <unordered_map>
 using namespace std;
-#define ll long long
-#define mp make_pair
-#define pb push_back
-int goRight(vector<string> v, int curRow, int curPos); //Function prototype to go right to next column
-int goLeft(vector<string> v, int curRow, int curPos); //Function prototype to go left to next column
+int GO(vector<string> v, int curRow, int curPos, string way); //Function prototype to GO right to next column
 
 //Function to get pair of top char <-> down char
 char getPair(char c, vector<string> v, int w, int h) {
@@ -12,22 +11,23 @@ char getPair(char c, vector<string> v, int w, int h) {
 
     while (i < h) {
         //If it's a very down char, return this character
-        if (i == h-1) { return v[i][curPos]; }
+        if (i == h-1) 
+            return v[i][curPos];
 
         //Else
         else {
             //If current char is a pipe ('|')
             if (v[i][curPos] == '|') {
 
-                //If there is a '-' to the right of current position, go right
-                if (curPos >= 0 && v[i][curPos+1] == '-') { 
-                    curPos = goRight(v, i, curPos);
-                }
+                //If there is a '-' to the right of current position, GO right
+                if (curPos >= 0 && v[i][curPos+1] == '-') 
+                    curPos = GO(v, i, curPos, "RIGHT");
+                
 
-                //Else if there is a '-' to the left of current position, go left
-                else if (curPos > 0 && curPos <= w && v[i][curPos-1] == '-') { 
-                    curPos = goLeft(v, i, curPos);
-                }
+                //Else if there is a '-' to the left of current position, GO left
+                else if (curPos > 0 && curPos <= w && v[i][curPos-1] == '-') 
+                    curPos = GO(v, i, curPos, "LEFT");
+                
             }
 
             //Move down
@@ -47,7 +47,9 @@ void playGame(vector<string> v, int w, int h) {
     vector<char> top;
 
     //Get top chars, which are not a ' ' char
-    for (auto it : v.front()) if (!isspace(it)) top.pb(it);
+    for (auto it : v.front()) 
+        if (!isspace(it)) 
+            top.push_back(it);
 
     //For each char in top chars, get its pair from down chars
     for (int i = 0; i < top.size(); ++i) 
@@ -61,12 +63,6 @@ void playGame(vector<string> v, int w, int h) {
 
 int main()
 {
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    freopen("input.txt", "r", stdin); //Inputting data from file "input.txt". Disable by adding // before a line if needed.
-    freopen("output.txt", "w", stdout); //Inputting data from file "output.txt". Disable by adding // before a line if needed.
-    
     //Declare width and height; input width and height; clean the input buffer (stream)
     int w, h; cin >> w >> h; cin.ignore(numeric_limits<streamsize>::max(), '\n'); 
 
@@ -83,21 +79,11 @@ int main()
     return 0;
 }
 
-//Function to go right to next column
-int goRight(vector<string> v, int curRow, int curPos) {
-    for (curPos = curPos+1; v[curRow][curPos] != '|'; ++curPos) 
+//Function to GO right to next column
+int GO(vector<string> v, int curRow, int curPos, string way) {
+    for (curPos = (way == "RIGHT") ? curPos+1 : curPos-1; v[curRow][curPos] != '|'; curPos += (way == "RIGHT") ? 1 : -1) 
         if (v[curRow][curPos] == '|') 
             return curPos;
     
-
-    return curPos;
-}
-
-//Function to go left to next column
-int goLeft(vector<string> v, int curRow, int curPos) {
-    for (curPos = curPos-1; v[curRow][curPos] != '|'; --curPos) 
-        if (v[curRow][curPos] == '|') 
-            return curPos;
-
     return curPos;
 }
