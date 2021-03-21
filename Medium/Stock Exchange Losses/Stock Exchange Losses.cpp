@@ -1,3 +1,4 @@
+//Link to the puzzle: https://www.codingame.com/training/medium/stock-exchange-losses
 #include <iostream>
 #include <vector>
 using namespace std;
