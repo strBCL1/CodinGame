@@ -1,3 +1,4 @@
+//Link to the puzzle: https://www.codingame.com/training/easy/dungeons-and-maps
 #include <iostream>
 #include <vector>
 using namespace std;
