@@ -57,15 +57,15 @@ int main()
 
     //Find longest "0000" sequence starting position;
     //.first = index of start, .second = amount of "0000" blocks after this position;
-    pair<int, int> longestStart = maxValue(m);//find_if(begin(m), end(m), [&] (auto i) {return i.second == ((--m.end())->second);});
+    pair<int, int> longestSeqStart = maxValue(m);//find_if(begin(m), end(m), [&] (auto i) {return i.second == ((--m.end())->second);});
 
     //IF it's not a single "0000" block:
-    if (longestStart.second > 1) {
+    if (longestSeqStart.second > 1) {
         //Erase whole longest "0000" sequence;
-        blocks.erase(blocks.begin() + longestStart.first, blocks.begin() + longestStart.first + longestStart.second); 
+        blocks.erase(blocks.begin() + longestSeqStart.first, blocks.begin() + longestSeqStart.first + longestSeqStart.second); 
 
         //Insert double-colon;
-        blocks.insert(blocks.begin() + longestStart.first, "::");
+        blocks.insert(blocks.begin() + longestSeqStart.first, "::");
     }
 
     //Print shortened IPv6 address;
