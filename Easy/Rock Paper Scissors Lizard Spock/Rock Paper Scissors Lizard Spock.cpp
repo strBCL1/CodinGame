@@ -1,3 +1,4 @@
+//Link to the puzzle: https://www.codingame.com/ide/puzzle/rock-paper-scissors-lizard-spock
 #include <iostream>
 #include <vector>
 #include <map>
