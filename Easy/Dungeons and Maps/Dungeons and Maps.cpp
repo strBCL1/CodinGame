@@ -38,14 +38,6 @@ int calculatePath (vector<string> v, vector<vector<bool>> visited, int curX, int
 
 int main()
 {
-    /* Optional for input and output fron files
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    */
-
     int w, h; //Declare width and height
     cin >> w >> h; cin.ignore();
 
