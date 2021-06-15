@@ -1,3 +1,4 @@
+//Link to the task: https://www.codingame.com/training/easy/offset-arrays
 #include <iostream>
 #include <map> 
 #include <vector>
