@@ -1,6 +1,6 @@
 # CodinGame
 If you'd like to visit my profile on CodinGame: https://www.codingame.com/profile/c4586c33c3a93fe4131d9ec9bfe08cf86233583
 
-In this repo there are solutions of some puzzles on this platform written in C++ language. Hope you can find these solutions clean and nice. 
+In this repo there are solutions of some puzzles on this platform written in C++ language. Not all my solutions have been published, but only that took me more time to solve. Hope you can find them nice and clean. 
 
 My brief bio: I signed up to CodinGame ~1.5 year ago. Since then I've been solving some coding puzzles aiming to improve my coding skills and learn something new. I also from time to time play Clash Of Code (CoC) with some other players from around the world. I strongly believe that communication and feedback helps improve the ability to write understandable and readable code.
